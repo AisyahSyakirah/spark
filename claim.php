@@ -112,10 +112,16 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
           <img src="dist/img/login.ico" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">HELLO MANAGER! <br>
-          <?php echo $_SESSION['EMPLOYEE_NAME'];?>
+          <a href="#" class="d-block"><?php if(($_SESSION['EMPLOYEE_ID']) == 14352) 
+                                            {
+                                              echo "HELLO MANAGER!"; 
+                                            }
+                                            else 
+                                            {echo "HELLO MEMBER!"; }?></a>                                 
+          <a href="#" class="d-block"><?php if(isset($_SESSION['EMPLOYEE_NAME'])) { echo $_SESSION['EMPLOYEE_NAME']; } ?> </a>
           </a>
         </div>
+      </div>
       </div>
 
       <!-- Sidebar Menu -->

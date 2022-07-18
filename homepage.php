@@ -165,6 +165,7 @@ include('connection.php');
       </div>
     </section>
   </div>
+ 
    <!-- /.content -->
 
   <!-- /.content-wrapper -->
