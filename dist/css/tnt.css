@@ -140,13 +140,16 @@ header a:hover{
 }
 
 .main-footer {
-    position:-webkit-sticky;
     background-color: rgb(98, 11, 124);
-    margin-top: 132px;
+    position: relative;
     color: #ffffff;
-    padding: 0.1rem;
+    padding: 1px;
+    margin-bottom: auto;
+    margin-top: 168px;
+    width: 100%;
     text-align: center;
-    width: 300px;
+
+    
   }
 
 

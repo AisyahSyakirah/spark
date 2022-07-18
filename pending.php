@@ -148,7 +148,7 @@ if(isset($SESSION['EMPLOYEE_ID'])){
                       $date2=$row0['ARRIVED_DATE']; //18/7
                       $sub=date_sub($date,date_interval_create_from_date_string('5 days'));
 
-                      if($sub >= $date2){
+                      if($date >= $date2){
                         $insert = "UPDATE PARCEL set STATUS_ID = '2002'";
         
                         if($conn->query($insert)== TRUE){?>

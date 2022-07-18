@@ -55,6 +55,8 @@ tr:nth-child(even){background-color: #f2f2f2}
     -webkit-transition:background-color .5s
 
 }
+
+
     </style>
     <header>
             <div class="container">
@@ -138,7 +140,7 @@ if(!empty($_POST['TRACKING_NO']))
                 <div style="overflow-x:auto;">
 
         
-    <TABLE border="2" cellpadding="2" cellspacing="2" width="50%">
+    <table border="2" cellpadding="2" cellspacing="2" width="50%">
     <tr>
               <TH width="130"><center>Tracking Number</center></TH>
               <TH><center>Parcel Status</center></TH>
@@ -162,11 +164,8 @@ if(!empty($_POST['TRACKING_NO']))
 
   </table>
 
-        <footer class="main-footer">
-            <strong>Copyright &copy; 2022. JAWATANKUASA PERWAKILAN KOLEJ KAMPUS RAUB</strong>
-        </footer> 
-</body>
-<script>
+</div></div></table></div></div></div><br>
+ <script>
  
         function openNav() {
                 document.getElementById("mySidenav").style.width = "200px";
@@ -177,4 +176,9 @@ if(!empty($_POST['TRACKING_NO']))
                 document.getElementById("main").style.marginLeft= "0";
             }
             </script>
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2022. JAWATANKUASA PERWAKILAN KOLEJ KAMPUS RAUB</strong>
+        </footer> 
+</body>
+
 </html>

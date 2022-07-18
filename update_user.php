@@ -126,7 +126,6 @@ if(isset($_POST['EMPLOYEE_ID'])){
                     <th>EMPLOYEE ID</th>
                     <th>EMPLOYEE IC</th>
                     <th>EMPLOYEE NAME</th>
-                    <th>PERMISSION</th>
                     <th>UPDATE</th>
                     </tr>
                     </thead>
@@ -143,24 +142,23 @@ if(isset($_POST['EMPLOYEE_ID'])){
                           $permission_id=$row['PERMISSION_ID'];
                           
                           //$query1="SELECT E.EMPLOYEE_ID, E.EMPLOYEE_ICNO, E.EMPLOYEE_NAME, P.PERMISSION_DETAILS FROM EMPLLOYEE E, PERMISSION P WHERE E.EMPLOYEE_ID=P.EMPLOYEE_ID";
-                          $query1="SELECT PERMISSION_DETAILS FROM PERMISSION WHERE PERMISSION_ID=$permission_id";
-                          $result1=mysqli_query($conn, $query1);
-                          $row1=mysqli_fetch_array($result1,MYSQLI_ASSOC);
-
+                          //$query1="SELECT PERMISSION_DETAILS FROM PERMISSION WHERE PERMISSION_ID=$permission_id";
+                          //$result1=mysqli_query($conn, $query1);
+                          //$row1=mysqli_fetch_array($result1,MYSQLI_ASSOC);
+                         if(($row['PERMISSION_ID'])== '1') { 
                           ?>
                            <tr>
                             <td><?php echo $i;?></td>
                             <td><?php echo $row['EMPLOYEE_ID'];?></td>
                             <td><?php echo $row['EMPLOYEE_ICNO'];?></td>
                             <td><?php echo $row['EMPLOYEE_NAME'];?></td>
-                            <td><?php echo $row1['PERMISSION_DETAILS'];?></td>
                             <td><?php if(($row['PERMISSION_ID'])== '1') {?> 
                             <a href="update_userProcess.php?employee_id=<?php echo $row['EMPLOYEE_ID'];?>"onclick="return confirm('Are you sure you want to change user access?');">Update</a></td>
                       </tr>
                             
                           <?php
                             }$i++;
-                          }
+                          } }
                         }else
                           {?>
 
@@ -168,7 +166,7 @@ if(isset($_POST['EMPLOYEE_ID'])){
                                             <?php
                                         }
 
-                            ?>
+                                      ?>
                       </tr>
                   </table>
                 </div>
