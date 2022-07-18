@@ -6,6 +6,7 @@
 	font-family: 'Poppins', sans-serif;
 	background-size: cover;
 }
+
 .section{
 	width: 100%;
 	min-height: 100vh;
@@ -43,7 +44,7 @@
 .content-section .content p{
 	margin-top: 10px;
 	font-family: sans-serif;
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 1.5;
 }
 .content-section .content .button{
@@ -75,11 +76,13 @@
 .main-footer {
 	position: relative;
 	background-color: rgb(98, 11, 124);
-	margin-top: 1px;
+	margin-top: 168px;
 	color: #ffffff;
 	padding: 0.1rem;
 	text-align: center;
   }
+  
+
 @media screen and (max-width: 768px){
 	.container{
 	width: 80%;
@@ -117,6 +120,7 @@
 .content-section .social{
 	text-align: center;
 }
+
 
 }
 

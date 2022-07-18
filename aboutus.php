@@ -5,19 +5,20 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-	<link rel="stylesheet" type="text/css" href="dist/css/aboutus.css">
+	<link rel="stylesheet" type="text/css" href="./dist/css/aboutus.css">
     <link rel='shortcut icon' href='dist/img/logo JPK.ico' type='image/x-icon'/>
 </head>	
 <body>
+		
 	<div class="section">
 		<div class="container">
 			<div class="content-section">
 				<div class="title">
 					<h1>About Us</h1>
 				</div>
-				<div class="content">
-					<h3>UiTM SPARK SYSTEM</h3>
-					<p> It is a system developed to manage student’s parcel tracking and management at college. 
+				<div class="content" style="font-size:10px;">
+					<h3 >UiTM SPARK SYSTEM</h3>
+					<p style="font-size:16px;"> It is a system developed to manage student’s parcel tracking and management at college. 
 						Problems in having an issue on determining the parcel recipient during key-in the information process because the student do not provide the exact details of themselves on the parcel. 
 						Besides, the redundancy of student’s name in the list because of manually process and staff notify the student regarding their's parcel through a piece of paper on college notice board. 
 						Thus, Student’s Parcel Tracking and Management System is proposed to manage the parcel management between staff and student. 
