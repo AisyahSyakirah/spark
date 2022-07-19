@@ -141,25 +141,70 @@ if(isset($SESSION['TRACKING_NO'])){
                     </thead>
 
                     <?php
-                      include('connection.php');
-                  
+                    include('connection.php'); 
+
+                    
+      
+                    if(!isset($_SESSION['TRACKING_NO'])){
+                      $query0="SELECT * FROM PARCEL WHERE STATUS_ID='2001'";
+                      $result0=mysqli_query($conn, $query0);
+
+                      function dateDiffInDays($date1, $date2) 
+                      {
+                          // Calculating the difference in timestamps
+                          $diff = strtotime($date2) - strtotime($date1);
+                      
+                          // 1 day = 24 hours
+                          // 24 * 60 * 60 = 86400 seconds
+                          return abs(round($diff / 86400));
+                      }
+                      
+                      if($result0->num_rows > 0){
+                        while ($row0=mysqli_fetch_array($result0)){
+                                // Start date
+                                $date1 = "now";
+                                
+                                // End date
+                                $date2 = $row0['ARRIVED_DATE'];
+                                
+                                // Function call to find date difference
+                                $dateDiff = dateDiffInDays($date1, $date2);
+
+                                $trackingNo=$row0['TRACKING_NO'];
+
+                              if($dateDiff>5){
+                                $insert = "UPDATE PARCEL set STATUS_ID = '2002' WHERE TRACKING_NO = '$trackingNo'" ;
+                                if($conn->query($insert)== TRUE){?>
+                          
+                                    <script type="text/javascript">
+
+                                      window.location.href = "arrived.php";
+                                      </script>  <?php         
+                                    }
+                              }
+                        }
+  
+              
+                        }
+                      } 
+                    
+                      
                       $query="SELECT * FROM PARCEL WHERE STATUS_ID='2001'";
                       $result=mysqli_query($conn, $query);
-
-                      $date1=date_create("2013-03-15");
-                      $date2=date_create("2013-12-12");
-                      $diff=date_diff($date1,$date2);
-                      echo $diff->format("%R%a days");
-                      
                       if($result->num_rows > 0){
                           $i=1;
                           while ($row=mysqli_fetch_array($result)){
-                          
-                          $query1="SELECT p.TRACKING_NO, p.RECEIVER_NAME, p.RECEIVER_PHONO, p.ARRIVED_DATE, p.ARRIVED_TIME, p.PIC_ARRIVED,p.COURIER_ID,c.COURIER_NAME, ps.STATUS_NAME, py.PAYMENT_PRICE 
-                                  FROM COURIER c, PARCEL_STATUS ps, PAYMENT py, PARCEL p 
-                                  WHERE c.COURIER_ID=p.COURIER_ID and ps.STATUS_ID=p.STATUS_ID and py.PAYMENT_ID=p.PAYMENT_ID";
-                          $result1=mysqli_query($conn, $query1);
-                          $row1=mysqli_fetch_array($result1,MYSQLI_ASSOC);
+
+                          $courier_id=$row['COURIER_ID'];
+                          $status_id=$row['STATUS_ID'];
+                          $payment_id=$row['PAYMENT_ID'];
+                  
+                                        $query1="SELECT c.COURIER_NAME, ps.STATUS_NAME, py.PAYMENT_PRICE 
+                                                FROM COURIER c, PARCEL_STATUS ps, PAYMENT py
+                                                WHERE c.COURIER_ID=$courier_id and ps.STATUS_ID= $status_id and py.PAYMENT_ID=$payment_id";
+                                        $result1=mysqli_query($conn, $query1);
+                                        $row1=mysqli_fetch_array($result1,MYSQLI_ASSOC);
+                            
                           
 
                           ?>

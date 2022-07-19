@@ -2,7 +2,7 @@
 <?php
 include ('connection.php');
 session_start();
-if(isset($SESSION['EMPLOYEE_ID'])){
+if(isset($_SESSION['TRACKING_NO'])){
 	header('localhost:homepage.php');
 	}
 
@@ -141,40 +141,8 @@ if(isset($SESSION['EMPLOYEE_ID'])){
                     </thead>
 
                     <?php
-                      include('connection.php');
-
-                      $query0="SELECT * FROM PARCEL WHERE STATUS_ID='2001'";
-                      $result0=mysqli_query($conn, $query0);
-
-                      
-                      if($result0->num_rows > 0){
-                      while ($row0=mysqli_fetch_array($result0)){
-              
-                      $date = date_create("now"); //18/7 13/7
-                      $date2=$row0['ARRIVED_DATE']; //18/7
-                      $sub=date_sub($date,date_interval_create_from_date_string('5 days'));
-
-                      if($date >= $date2){
-                        $insert = "UPDATE PARCEL set STATUS_ID = '2002'";
-        
-                        if($conn->query($insert)== TRUE){?>
-                  
-                             <script type="text/javascript">
-
-                              window.location.href = "pending.php";
-                              </script>  <?php         
-                            }
-                    }
-
-                    
-                    //$sub=date_sub($date,$date2);
-
-                    //echo date_format($date,'Y-m-d');
-                    //echo $sub;
-                          
-              
-                  }
-                }   
+                     include('connection.php');  
+                     
                       $query="SELECT * FROM PARCEL WHERE STATUS_ID='2002'";
                       $result=mysqli_query($conn, $query);
                       if($result->num_rows > 0){
