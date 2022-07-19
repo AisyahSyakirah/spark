@@ -167,16 +167,16 @@ if(!empty($_POST['trackingNo']))
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script type="text/javascript">
             Swal.fire(
-            'INVALID',
-            'USERNAME AND PASSWORD !',
+            'INVALID TRACKING NUMBER !',
+            '',
             'error'
             );
+        
         </script><?php
         }
     
         mysqli_close($conn);
-}
-?>
+}?>
 
 
 
