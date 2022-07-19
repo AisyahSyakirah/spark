@@ -9,12 +9,20 @@
     <link rel='shortcut icon' href='dist/img/logo JPK.ico' type='image/x-icon'/>
 </head>	
 <body>
+	<div class="topnav">
+        <li class="sidemenubtn">
+		<a style= "padding:20px; font-size:20px;"href="index.php">Home</a>
+        <a style= "padding:20px; font-size:20px;" href="cust_trackntrace.php">Track & Trace</a>
+        
+        </li>
+    </div>
+	
 		
 	<div class="section">
 		<div class="container">
 			<div class="content-section">
 				<div class="title">
-					<h1>About Us</h1>
+					<br><h1>About Us</h1>
 				</div>
 				<div class="content" style="font-size:10px;">
 					<h3 >UiTM SPARK SYSTEM</h3>
@@ -39,5 +47,13 @@
             <strong>Copyright &copy; 2022. JAWATANKUASA PERWAKILAN KOLEJ KAMPUS RAUB</strong>
         </footer> 
 </body>
+<script>
+        function openNav() {
+                document.getElementById("mySidenav").style.width = "200px";
+                        }
+        function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+    </script>
 
 </html>

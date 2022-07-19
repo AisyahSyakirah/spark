@@ -137,11 +137,11 @@ if(!empty($_POST['TRACKING_NO']))
                 <div style="overflow-x:auto;">
 
         
-    <table border="2" cellpadding="2" cellspacing="2" width="50%">
+    <table style="border:2; cellpadding=2; cellspacing=2; width=50%; ">
     <tr>
-              <th width="130">Tracking Number</th>
-              <th>Parcel Status</th>
-              <th width="100">Payment</>
+              <th style="text-align:center;" width="130">Tracking Number</th>
+              <th style="text-align:center;">Parcel Status</th>
+              <th style="text-align:center;" width="100">Payment</>
         
      </tr>
     <tr><br>
@@ -149,25 +149,23 @@ if(!empty($_POST['TRACKING_NO']))
         <h1>HERE'S YOUR TRACKING NUMBER<br><br><?php echo $row['TRACKING_NO'];?></h1>
         <?php $bil=1;?>
      
-                <td><?php echo $row['TRACKING_NO'];?></td>
-                <td><?php echo $row['STATUS_NAME'];?></td>
-                <td>RM <?php echo $row['PAYMENT_PRICE'];?></td>
-            
+                <td style="text-align:center;"><?php echo $row['TRACKING_NO'];?></td>
+                <td style="text-align:center;"><?php echo $row['STATUS_NAME'];?></td>
+                <td style="text-align:center;">RM <?php echo $row['PAYMENT_PRICE'];?></td>
+                
     </tr>
 <?php } 
-else {?>
-    <script type="text/javascript">
-		alert("USERNAME AND PASSWORD IS INVALID !");
-		window.location.href = "index.php";
-	</script><?php
-	}
 
-	mysqli_close($conn);
 ?>
+   
 
-            
+</div></table></div></div></div></div>
 
-</div></div></table></div></div></div><br>
+<div style="text-align:center;">
+<?php echo 'arrived-   [registered in the system] ||' ; ?> 
+<?php echo 'collected- [claimed by receiver] ||' ; ?> 
+<?php echo ' pending-   [unclaimed within 5 days]' ; ?>  
+</div>
  <script>
  
         function openNav() {
