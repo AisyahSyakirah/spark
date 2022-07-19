@@ -113,13 +113,13 @@ include('connection.php');
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid" style= "width:1000px;margin-left:20px;">
+    <section class="content" >
+      <div class="container-fluid" style= "width:1300px;margin-right:100px;">
         <!-- Small boxes (Stat box) -->
         <div class="row">
           <div class="col-lg-3 col-6">
             <!-- small box -->
-                    <div class="small-box bg-info" style="width:300px;border-spacing: 15px;"  >
+                    <div class="small-box bg-info"  >
                       <div class="inner">
                       <h3>
                         <?php
@@ -151,7 +151,7 @@ include('connection.php');
           <!-- ./col -->
           <div class="col-lg-3 col-6">
                   <!-- small box -->
-                  <div class="small-box bg-success" style="width:300px;border-spacing: 15px"  >
+                  <div class="small-box bg-success"  >
                     <div class="inner">
                       <h3>
                         <?php
@@ -182,7 +182,7 @@ include('connection.php');
           <!-- ./col -->
           <div class="col-lg-3 col-6">
                 <!-- small box -->
-                <div class="small-box bg-warning"  style="width:300px;" >
+                <div class="small-box bg-warning" >
                   <div class="inner">
                   <h3>
                         <?php
