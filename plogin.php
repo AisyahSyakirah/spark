@@ -84,11 +84,12 @@ include('connection.php');
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             <script type="text/javascript">
-                Swal.fire(
-                'INVALID',
-                'USERNAME AND PASSWORD !',
-                'error'
-                );
+                Swal.fire({
+                icon: 'error',
+                title: 'Something went wrong!',
+                text: 'INVALID USERNAME AND PASSWORD !',
+                footer: '<a href="index.php">Click here to retry</a>'
+                });
             </script><?php
             }
 
