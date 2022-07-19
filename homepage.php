@@ -11,7 +11,7 @@ include('connection.php');
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> UiTM SPARK SYSTEM | USER </title>
+  <title> UiTM SPARK SYSTEM | HOME </title>
   <link rel='shortcut icon' href='dist/img/logo JPK.ico' type='image/x-icon'/>
 
   <!-- Google Font: Source Sans Pro -->
@@ -103,7 +103,7 @@ include('connection.php');
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">SPARK Dashboard</h1>
+            <h1 class="m-0">SPARK DASHBOARD</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
           </div><!-- /.col -->
