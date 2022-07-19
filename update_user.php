@@ -167,8 +167,7 @@ if(isset($_POST['EMPLOYEE_ID'])){
                           } }
                         }else
                           {?>
-
-                                            <td colspan=10><?php echo "<center>No records</center>";?></td>
+                          <td colspan=10><?php echo "<center>No records</center>";?></td>
                                             <?php
                                         }
 
