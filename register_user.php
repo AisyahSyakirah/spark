@@ -102,7 +102,7 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>User Utilities</h1>
+            <h1>ADD NEW SPARK MEMBER</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -112,10 +112,9 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <!-- left column -->
-          <div class="col-md-6 d-flex justify-content-center">
+
             <!-- general form elements -->
-            <div class="card card-success" style="width: 69rem;">
+            <div class="card card-success" style="width: 65rem; left:10px;">
               <div class="card-header">
                 <h3 class="card-title"><strong>Add User</strong></h3>
               </div>
@@ -148,8 +147,8 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
 	                </select>
                 </div>
                 <!-- /.card-body -->
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-success" onkeyup=checkEmpID() >Add</button>
+                <div>
+                <button type="submit" class="btn btn-success" style="width:100px;position:relative; left:900px" onkeyup="checkEmpID()">Add</button>
                 </div>
               </form>
             </div>
