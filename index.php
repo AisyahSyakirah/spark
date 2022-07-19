@@ -60,7 +60,6 @@
             <strong>Copyright &copy; 2022. JAWATANKUASA PERWAKILAN KOLEJ KAMPUS RAUB</strong>
         </footer>   
 </body>
-    <script src="dist/js/login.js"></script>
     <script>
         function openNav() {
                 document.getElementById("mySidenav").style.width = "200px";
