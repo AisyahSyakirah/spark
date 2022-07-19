@@ -56,7 +56,7 @@ if(isset($_POST['EMPLOYEE_ID'])){
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href= "home_manager.php" class= "nav-link">Home</a>
+        <a href= "homepage.php" class= "nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href= "https://pahang.uitm.edu.my/index.php/en/directory/raub-directory" class= "nav-link">Contact</a>
