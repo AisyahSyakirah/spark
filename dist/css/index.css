@@ -5,7 +5,7 @@ body {
     font-family: 'Raleway', sans-serif;
     color: #ffffff;
     background: url(background.jpg);
-    position:fixed;
+    s;
     top:0;
     bottom:0;
     left:0;
@@ -221,9 +221,9 @@ input[type=submit] {
 }
 
 .main-footer {
-  position:-webkit-sticky;
+  position:relative;
   background-color: rgb(98, 11, 124);
-  margin-top: 130px;
+  margin-top: 258px;
   color: #ffffff;
   padding: 0.1rem;
   text-align: center;
