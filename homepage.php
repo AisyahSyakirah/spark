@@ -119,48 +119,65 @@ include('connection.php');
         <div class="row">
           <div class="col-lg-3 col-6">
             <!-- small box -->
-            <div class="small-box bg-info"  >
-              <div class="inner">
-                <h3>150</h3>
+                    <div class="small-box bg-info"  >
+                      <div class="inner">
+                        <h3>150</h3>
 
-                <p>NEW ARRIVED</p>
-              </div>
-              <div class="icon">
-                <i class="ion-archive"></i>
-              </div>
-              <a href="arrived.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
+                        <p>NEW ARRIVED</p>
+                      </div>
+                      <div class="icon">
+                        <i class="ion-archive"></i>
+                      </div>
+                      <a href="arrived.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
+
+                  <?php
+                    include('connection.php'); 
+                    if(!isset($_SESSION['TRACKING_NO'])){
+                      $query0="SELECT * FROM PARCEL WHERE STATUS_ID='2001'";
+                      $result0=mysqli_query($conn, $query0);
+
+                      function myCount($date1, $date2) 
+                      {
+                          // Calculating the difference in timestamps
+                          $diff = strtotime($date2) - strtotime($date1);
+                      
+                          // 1 day = 24 hours
+                          // 24 * 60 * 60 = 86400 seconds
+                          return abs(round($diff / 86400));
+                      }}?>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success"  >
-              <div class="inner">
-                <h3>10000</h3>
+                  <!-- small box -->
+                  <div class="small-box bg-success"  >
+                    <div class="inner">
+                      <h3>10000</h3>
+                      
 
-                <p>COLLECTED</p>
-              </div>
-              <div class="icon">
-                <i class="ion-ios-box"></i>
-              </div>
-              <a href="collected.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
+                      <p>COLLECTED</p>
+                    </div>
+                    <div class="icon">
+                      <i class="ion-ios-box"></i>
+                    </div>
+                    <a href="collected.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                  </div>
+                </div>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning" >
-              <div class="inner">
-                <h3>44</h3>
-                
-                <p>PENDING</p>
-              </div>
-              <div class="icon">
-                <i class="ion-android-share"></i>
-              </div>
-              <a href="pending.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <!-- small box -->
+                <div class="small-box bg-warning" >
+                  <div class="inner">
+                    <h3>44</h3>
+                    
+                    <p>PENDING</p>
+                  </div>
+                  <div class="icon">
+                    <i class="ion-android-share"></i>
+                  </div>
+                  <a href="pending.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                </div>
             </div>
-          </div>
         </div>
       </div>
     </section>
