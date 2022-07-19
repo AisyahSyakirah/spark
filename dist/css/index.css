@@ -220,10 +220,12 @@ input[type=submit] {
 }
 
 .main-footer {
-  position:relative;
-  background-color: rgb(98, 11, 124);
-  margin-top: 258px;
-  color: #ffffff;
-  padding: 0.1rem;
-  text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(98, 11, 124);
+    color: #ffffff;
+    padding: 0.1rem;
+    text-align: center;
 }
