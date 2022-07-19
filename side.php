@@ -151,6 +151,5 @@ else
               <p>Pending</p>
             </a>
           </li>';
-    }
-
+  }
 ?>
