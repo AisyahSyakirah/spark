@@ -88,7 +88,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                     <div class="searchtf">
                         <form action="cust_trackntrace.php" target="_self" method="post" > 
                             <center><input type = "varchar" placeholder="Tracking No"  name="TRACKING_NO">
-                            <input type="submit" class="tfbutton w3-hover-red btn-lg" name= "search" value="Search"></i></center>
+                            <input type="submit" class="tfbutton w3-hover-red btn-lg" name= "search" value="Search" style="background-color:#d16cd1;"></i></center>
                           
                         </form>
                     </div>
@@ -117,44 +117,44 @@ if(!empty($_POST['TRACKING_NO']))
 
 
             <div style="background-color: #ccc">
-            <tr bgcolor="#ccc">
+            <tr >
                 <th width="158" scope="row"><div>RECEIVER NAME </div></th>
                 <td>&nbsp; <?php echo $row1['RECEIVER_NAME']; ?></td>
             </tr>
-            <tr bgcolor="#ccc">
+            <tr >
                 <th scope="row"><div>RECEIVER PHONE NUMBER </div></th>
                 <td>&nbsp; <?php echo $row1['RECEIVER_PHONO']; ?></td>
             </tr>
-            <tr bgcolor="#ccc">
+            <tr>
                 <th width="158" scope="row"><div>RECEIVER CATEGORY </div></th>
                 <td>&nbsp; <?php echo $row['RECEIVER_DETAIL']; ?></td>
             </tr>
-            <tr bgcolor="#ccc">
+            <tr>
                 <th width="158" scope="row"><div>COURIER NAME</div></th>
                 <td>&nbsp;  <?php echo $row['COURIER_NAME']; ?></td>
             </tr>
         
                 <div class="table">
                 <table class="table table-bordered">
-                <div align="center">
+                <div style="text-align=center">
                 <div style="overflow-x:auto;">
 
         
     <table border="2" cellpadding="2" cellspacing="2" width="50%">
     <tr>
-              <TH width="130"><center>Tracking Number</center></TH>
-              <TH><center>Parcel Status</center></TH>
-              <TH width="100"><center>Payment</center></TH>
+              <TH width="130">Tracking Number</TH>
+              <TH>Parcel Status</TH>
+              <TH width="100">Payment</TH>
         
      </tr>
     <tr><br>
         <br><br>
-        <h1><center>HERE'S YOUR TRACKING NUMBER<br><br><?php echo $row['TRACKING_NO'];?></center></h1>
+        <h1>HERE'S YOUR TRACKING NUMBER<br><br><?php echo $row['TRACKING_NO'];?></h1>
         <?php $bil=1;?>
      
-                <td><center><?php echo $row['TRACKING_NO'];?></center></td>
-                <td><center><?php echo $row['STATUS_NAME'];?></center></td>
-                <td><center>RM <?php echo $row['PAYMENT_PRICE'];?></center></td>
+                <td><?php echo $row['TRACKING_NO'];?></td>
+                <td><?php echo $row['STATUS_NAME'];?></td>
+                <td>RM <?php echo $row['PAYMENT_PRICE'];?></td>
 
     </tr>
     
