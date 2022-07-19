@@ -88,7 +88,10 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
       </div>
 
       <!-- Sidebar Menu -->
-      <?php include('side.php'); ?>
+      <nav>
+          <?php include('side.php'); ?>
+        </ul>
+      </nav>
 
     </div>
     <!-- /.sidebar -->
