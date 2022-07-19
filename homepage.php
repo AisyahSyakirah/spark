@@ -121,7 +121,22 @@ include('connection.php');
             <!-- small box -->
                     <div class="small-box bg-info"  >
                       <div class="inner">
-                        <h3>150</h3>
+                      <h3>
+                        <?php
+                        include('connection.php'); 
+                        if(!isset($_SESSION['TRACKING_NO'])){
+                          $query="SELECT TRACKING_NO FROM PARCEL WHERE STATUS_ID='2001'";
+                          $result=mysqli_query($conn, $query);
+
+                          if($result){
+                            $row = mysqli_num_rows($result);
+                            if($row){
+                              printf($row);
+                            }
+                            mysqli_free_result($result);
+                          }
+                      } mysqli_close($conn);?>
+                      </h3>
 
                         <p>NEW ARRIVED</p>
                       </div>
@@ -132,27 +147,28 @@ include('connection.php');
                     </div>
                   </div>
 
-                  <?php
-                    include('connection.php'); 
-                    if(!isset($_SESSION['TRACKING_NO'])){
-                      $query0="SELECT * FROM PARCEL WHERE STATUS_ID='2001'";
-                      $result0=mysqli_query($conn, $query0);
-
-                      function myCount($date1, $date2) 
-                      {
-                          // Calculating the difference in timestamps
-                          $diff = strtotime($date2) - strtotime($date1);
-                      
-                          // 1 day = 24 hours
-                          // 24 * 60 * 60 = 86400 seconds
-                          return abs(round($diff / 86400));
-                      }}?>
+                  
           <!-- ./col -->
           <div class="col-lg-3 col-6">
                   <!-- small box -->
                   <div class="small-box bg-success"  >
                     <div class="inner">
-                      <h3>10000</h3>
+                      <h3>
+                        <?php
+                        include('connection.php'); 
+                        if(!isset($_SESSION['TRACKING_NO'])){
+                          $query="SELECT TRACKING_NO FROM PARCEL WHERE STATUS_ID='2003'";
+                          $result=mysqli_query($conn, $query);
+
+                          if($result){
+                            $row = mysqli_num_rows($result);
+                            if($row){
+                              printf($row);
+                            }
+                            mysqli_free_result($result);
+                          }
+                      } mysqli_close($conn);?>
+                      </h3>
                       
 
                       <p>COLLECTED</p>
@@ -168,7 +184,22 @@ include('connection.php');
                 <!-- small box -->
                 <div class="small-box bg-warning" >
                   <div class="inner">
-                    <h3>44</h3>
+                  <h3>
+                        <?php
+                        include('connection.php'); 
+                        if(!isset($_SESSION['TRACKING_NO'])){
+                          $query="SELECT TRACKING_NO FROM PARCEL WHERE STATUS_ID='2002'";
+                          $result=mysqli_query($conn, $query);
+
+                          if($result){
+                            $row = mysqli_num_rows($result);
+                            if($row){
+                              printf($row);
+                            }
+                            mysqli_free_result($result);
+                          }
+                      } mysqli_close($conn);?>
+                      </h3>
                     
                     <p>PENDING</p>
                   </div>
