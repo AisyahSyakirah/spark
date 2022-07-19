@@ -35,7 +35,7 @@
 			</div>
 		</div>
 	</div>
-    <footer class="main-footer">
+    <footer class="main-footer" style="margin-top:0px;">
             <strong>Copyright &copy; 2022. JAWATANKUASA PERWAKILAN KOLEJ KAMPUS RAUB</strong>
         </footer> 
 </body>
