@@ -168,7 +168,7 @@ if(!empty($_POST['trackingNo']))
         <script type="text/javascript">
             Swal.fire(
             'INVALID',
-            'USERNAME AND PASSWORD !',
+            'TRACKING NUMBER !',
             'error'
             );
         </script><?php
