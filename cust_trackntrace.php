@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -56,7 +57,6 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 }
 
-
     </style>
     <header>
             <div class="container">
@@ -92,11 +92,10 @@ tr:nth-child(even){background-color: #f2f2f2}
                           
                         </form>
                     </div>
+                    
 
 <?php
 include ('connection.php');
- mysqli_select_db($conn,'sparkdb');
-
 
 if(!empty($_POST['TRACKING_NO']))
 {
@@ -114,9 +113,7 @@ if(!empty($_POST['TRACKING_NO']))
     $row = mysqli_fetch_array($r_query, MYSQLI_ASSOC); 
 
     echo "<br><h1>TRACKING INFORMATION</h1>";?>
-
-
-            <div style="background-color: #ccc">
+    <div style="background-color: #ccc">
             <tr >
                 <th width="158" scope="row"><div>RECEIVER NAME </div></th>
                 <td>&nbsp; <?php echo $row1['RECEIVER_NAME']; ?></td>
@@ -142,9 +139,9 @@ if(!empty($_POST['TRACKING_NO']))
         
     <table border="2" cellpadding="2" cellspacing="2" width="50%">
     <tr>
-              <TH width="130">Tracking Number</TH>
-              <TH>Parcel Status</TH>
-              <TH width="100">Payment</TH>
+              <th width="130">Tracking Number</th>
+              <th>Parcel Status</th>
+              <th width="100">Payment</>
         
      </tr>
     <tr><br>
@@ -155,14 +152,20 @@ if(!empty($_POST['TRACKING_NO']))
                 <td><?php echo $row['TRACKING_NO'];?></td>
                 <td><?php echo $row['STATUS_NAME'];?></td>
                 <td>RM <?php echo $row['PAYMENT_PRICE'];?></td>
-
+            
     </tr>
-    
-    
-<?php        
-}?>
+<?php } 
+else {?>
+    <script type="text/javascript">
+		alert("USERNAME AND PASSWORD IS INVALID !");
+		window.location.href = "index.php";
+	</script><?php
+	}
 
-  </table>
+	mysqli_close($conn);
+?>
+
+            
 
 </div></div></table></div></div></div><br>
  <script>
@@ -176,7 +179,7 @@ if(!empty($_POST['TRACKING_NO']))
                 document.getElementById("main").style.marginLeft= "0";
             }
             </script>
-        <footer class="main-footer">
+        <footer class="main-footer"style="margin-top: 168px;">
             <strong>Copyright &copy; 2022. JAWATANKUASA PERWAKILAN KOLEJ KAMPUS RAUB</strong>
         </footer> 
 </body>

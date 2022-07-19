@@ -72,7 +72,6 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
           </a>
         </div>
       </div>
-      </div>
 
       <!-- Sidebar Menu -->
       <nav>
