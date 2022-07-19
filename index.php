@@ -30,7 +30,7 @@
                    
     <div id="container-login">
         <div id="title">
-            <i class="material-icons lock">lock</i> UiTM SPARK SYSTEM</div>
+            <i class="material-icons lock">lock</i>UiTM SPARK SYSTEM</div>
 
     <form action="plogin.php" class="form" id="login" method="POST">    
         <div class="input">
@@ -56,7 +56,7 @@
 
     </div>
 
-        <footer class="main-footer" style="margin-top:132px;" >
+        <footer class="main-footer" style="margin-top:130px;" >
             <strong>Copyright &copy; 2022. JAWATANKUASA PERWAKILAN KOLEJ KAMPUS RAUB</strong>
         </footer>   
 </body>
