@@ -95,14 +95,13 @@ if(isset($SESSION['TRACKING_NO'])){
           </a>
         </div>
       </div>
-      </div>
 
       <!-- Sidebar Menu -->
       <nav>
           <?php include('side.php'); ?>
         </ul>
       </nav>
-                                          </nav>
+
     </div>
     <!-- /.sidebar -->
   </aside>

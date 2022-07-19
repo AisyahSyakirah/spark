@@ -122,13 +122,13 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
           </a>
         </div>
       </div>
-      </div>
 
       <!-- Sidebar Menu -->
       <nav>
           <?php include('side.php'); ?>
         </ul>
       </nav>
+
     </div>
     <!-- /.sidebar -->
   </aside>

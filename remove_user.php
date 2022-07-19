@@ -11,7 +11,7 @@ if(isset($_POST['EMPLOYEE_ID'])){
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> UiTM SPARK SYSTEM | UPDATE USER ACCESS</title>
+  <title> UiTM SPARK SYSTEM | REMOVE USER ACCESS</title>
   <link rel='shortcut icon' href='dist/img/logo JPK.png' type='image/x-icon'/>
 
   <!-- Google Font: Source Sans Pro -->
@@ -95,13 +95,13 @@ if(isset($_POST['EMPLOYEE_ID'])){
           </a>
         </div>
       </div>
-      </div>
 
       <!-- Sidebar Menu -->
       <nav>
           <?php include('side.php'); ?>
         </ul>
       </nav>
+
     </div>
     <!-- /.sidebar -->
   </aside>
@@ -112,7 +112,7 @@ if(isset($_POST['EMPLOYEE_ID'])){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-9">
-            <h1 class="m-0">UPDATE USER ACCESS</h1>
+            <h1 class="m-0">REMOVE USER ACCESS</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -125,14 +125,14 @@ if(isset($_POST['EMPLOYEE_ID'])){
                 <!-- /.card-header -->
               <div class="card">
                 <div class="card-body">
-                  <table id="example1" class="table table-bordered table-striped" method="post" action="update_userProcess.php">
+                  <table id="example1" class="table table-bordered table-striped" method="post" action="remove_userProcess.php">
                     <thead>
                     <tr>
                     <th>NO.</th>
                     <th>EMPLOYEE ID</th>
                     <th>EMPLOYEE IC</th>
                     <th>EMPLOYEE NAME</th>
-                    <th>UPDATE</th>
+                    <th>ACCESS</th>
                     </tr>
                     </thead>
                     
@@ -159,7 +159,7 @@ if(isset($_POST['EMPLOYEE_ID'])){
                             <td><?php echo $row['EMPLOYEE_ICNO'];?></td>
                             <td><?php echo $row['EMPLOYEE_NAME'];?></td>
                             <td><?php if(($row['PERMISSION_ID'])== '1') {?> 
-                            <a href="update_userProcess.php?employee_id=<?php echo $row['EMPLOYEE_ID'];?>"onclick="return confirm('Are you sure you want to change user access?');">Update</a></td>
+                            <a href="remove_userProcess.php?employee_id=<?php echo $row['EMPLOYEE_ID'];?>"onclick="return confirm('Are you sure you want to remove user access to this system?');">Remove</a></td>
                       </tr>
                             
                           <?php

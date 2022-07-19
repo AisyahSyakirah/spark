@@ -83,9 +83,16 @@ else
           </li>
 
           <li class="nav-item">
-            <a href="update_user.php" class="nav-link">
+            <a href="remove_user.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Update User Access</p>
+              <p>Remove User Access</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="userlist.php" class="nav-link">
+              <i class="far fa-circle nav-icon"></i>
+              <p>User List</p>
             </a>
           </li>
         </ul>    

@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <?php
-include ('connection.php');
+include 'connection.php';
 session_start();
-if(isset($SESSION['EMPLOYEE_ID'])){
-	header('localhost:homepage.php');
+if(isset($_POST['EMPLOYEE_ID'])){
+	header('localhost:index.php');
 	}
 
 ?>
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> UiTM SPARK SYSTEM | COLLECTED </title>
+  <title> UiTM SPARK SYSTEM | USER LIST</title>
   <link rel='shortcut icon' href='dist/img/logo JPK.png' type='image/x-icon'/>
 
   <!-- Google Font: Source Sans Pro -->
@@ -48,15 +47,16 @@ if(isset($SESSION['EMPLOYEE_ID'])){
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
-   <!-- Navbar -->
-   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href= "homepage.php" class= "nav-link">Home</a>
+        <a href= "home_manager.php" class= "nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href= "https://pahang.uitm.edu.my/index.php/en/directory/raub-directory" class= "nav-link">Contact</a>
@@ -112,7 +112,7 @@ if(isset($SESSION['EMPLOYEE_ID'])){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-9">
-            <h1 class="m-0">PENDING PARCEL</h1>
+            <h1 class="m-0">USER LIST</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -125,100 +125,54 @@ if(isset($SESSION['EMPLOYEE_ID'])){
                 <!-- /.card-header -->
               <div class="card">
                 <div class="card-body">
-                  <table id="example1" class="table table-bordered table-striped" style="font-size: 15px;">
+                  <table id="example1" class="table table-bordered table-striped" method="post">
                     <thead>
                     <tr>
                     <th>NO.</th>
-                    <th>TRACKING NO</th>
-                    <th>RECEIVER NAME</th>
-                    <th>RECEIVER PHONE NUMBER</th>
-                    <th>ARRIVED DATE</th>
-                    <th>ARRIVED TIME </th>
-                    <th>COURIER</th>
-                    <th>PERSON IN CHARGE</th>
-                    <th>PAYMENT</th>
+                    <th>EMPLOYEE ID</th>
+                    <th>EMPLOYEE IC</th>
+                    <th>EMPLOYEE NAME</th>
+                    <th>PERMISSION</th>
                     </tr>
                     </thead>
-
-                    <?php
-                      include('connection.php');
-
-                      $query0="SELECT * FROM PARCEL WHERE STATUS_ID='2001'";
-                      $result0=mysqli_query($conn, $query0);
-
-                      
-                      if($result0->num_rows > 0){
-                      while ($row0=mysqli_fetch_array($result0)){
-              
-                      $date = date_create("now"); //18/7 13/7
-                      $date2=$row0['ARRIVED_DATE']; //18/7
-                      $sub=date_sub($date,date_interval_create_from_date_string('5 days'));
-
-                      if($date >= $date2){
-                        $insert = "UPDATE PARCEL set STATUS_ID = '2002'";
-        
-                        if($conn->query($insert)== TRUE){?>
-                  
-                             <script type="text/javascript">
-
-                              window.location.href = "pending.php";
-                              </script>  <?php         
-                            }
-                    }
-
                     
-                    //$sub=date_sub($date,$date2);
-
-                    //echo date_format($date,'Y-m-d');
-                    //echo $sub;
-                          
-              
-                  }
-                }   
-                      $query="SELECT * FROM PARCEL WHERE STATUS_ID='2002'";
+                    <?php
+                      require('connection.php');
+          
+                      $query="SELECT * FROM employee WHERE EMPLOYEE_ID != '14352' ";
                       $result=mysqli_query($conn, $query);
+
+                      $i=1;
                       if($result->num_rows > 0){
-                          $i=1;
-                          while ($row=mysqli_fetch_array($result)){
-
-                          $courier_id=$row['COURIER_ID'];
-                          $status_id=$row['STATUS_ID'];
-                          $payment_id=$row['PAYMENT_ID'];
-
-                  
-                                        $query1="SELECT c.COURIER_NAME, ps.STATUS_NAME, py.PAYMENT_PRICE 
-                                                FROM COURIER c, PARCEL_STATUS ps, PAYMENT py
-                                                WHERE c.COURIER_ID=$courier_id and ps.STATUS_ID= $status_id and py.PAYMENT_ID=$payment_id";
-                                        $result1=mysqli_query($conn, $query1);
-                                        $row1=mysqli_fetch_array($result1,MYSQLI_ASSOC);
-                            
+                      while ($row=mysqli_fetch_array($result)){
+                          $permission_id=$row['PERMISSION_ID'];
                           
-                          
+                          $query1="SELECT E.EMPLOYEE_ID, E.EMPLOYEE_ICNO, E.EMPLOYEE_NAME, P.PERMISSION_DETAILS FROM EMPLLOYEE E, PERMISSION P WHERE E.EMPLOYEE_ID=P.EMPLOYEE_ID";
+                          $query1="SELECT PERMISSION_DETAILS FROM PERMISSION WHERE PERMISSION_ID=$permission_id";
+                          $result1=mysqli_query($conn, $query1);
+                          $row1=mysqli_fetch_array($result1,MYSQLI_ASSOC);
+                         if(($row['PERMISSION_ID'])== $permission_id) { 
                           ?>
                            <tr>
                             <td><?php echo $i;?></td>
-                            <td><?php echo $row['TRACKING_NO'];?></td>
-                            <td><?php echo $row['RECEIVER_NAME'];?></td>
-                            <td><?php echo $row['RECEIVER_PHONO'];?></td>
-                            <td><?php echo $row['ARRIVED_DATE'];?></td>
-                            <td><?php echo $row['ARRIVED_TIME'];?></td>
-                            <td><?php echo $row1['COURIER_NAME'];?></td>
-                            <td><?php echo $row['PIC_ARRIVED'];?></td>
-                            <td>RM <?php echo $row1['PAYMENT_PRICE'];?></td>
+                            <td><?php echo $row['EMPLOYEE_ID'];?></td>
+                            <td><?php echo $row['EMPLOYEE_ICNO'];?></td>
+                            <td><?php echo $row['EMPLOYEE_NAME'];?></td>
+                            <td><?php echo $row1['PERMISSION_DETAILS'];?></td>
                             
                       </tr>
                             
                           <?php
-                            $i++;}
-                          }
-                      else
+                            }$i++;
+                          } }
+                        else
                           {?>
-
-                                            <td colspan=10><?php echo "<center>No records</center>";?></td>
+                          <td colspan=10><?php echo "<center>No records</center>";?></td>
                                             <?php
                                         }
-                            ?>
-                            
+                                    
+                                      ?>
+                      </tr>
                   </table>
                 </div>
 
@@ -302,7 +256,6 @@ if(isset($SESSION['EMPLOYEE_ID'])){
   $(function () {
     $("#example1").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
     $('#example2').DataTable({
       "paging": true,
@@ -317,3 +270,4 @@ if(isset($SESSION['EMPLOYEE_ID'])){
 </script>
 </body>
 </html>
+    
