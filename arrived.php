@@ -102,7 +102,7 @@ if(isset($SESSION['TRACKING_NO'])){
           <?php include('side.php'); ?>
         </ul>
       </nav>
-
+                                          </nav>
     </div>
     <!-- /.sidebar -->
   </aside>

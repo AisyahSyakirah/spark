@@ -10,7 +10,7 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> UiTM SPARK SYSTEM | USER UTILITIES </title>
+  <title> UiTM SPARK SYSTEM | USER </title>
   <link rel='shortcut icon' href='dist/img/logo JPK.ico' type='image/x-icon'/>
 
   <!-- Google Font: Source Sans Pro -->
@@ -84,7 +84,6 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
           <a href="#" class="d-block"><?php if(isset($_SESSION['EMPLOYEE_NAME'])) { echo $_SESSION['EMPLOYEE_NAME']; } ?> </a>
           </a>
         </div>
-      </div>
       </div>
 
       <!-- Sidebar Menu -->
