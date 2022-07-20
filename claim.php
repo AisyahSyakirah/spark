@@ -44,7 +44,6 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
                   'error'
                 );<?php echo $tracking_no?>
             </script><?php
-
       }
       
       $conn->close();
@@ -309,8 +308,5 @@ function GetDetail(str) {
     }
 }
 </script>
-
-
-
 </body>
 </html>
