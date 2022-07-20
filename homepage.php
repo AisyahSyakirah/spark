@@ -119,8 +119,8 @@ include('connection.php');
         <div class="row">
           <div class="col-lg-3 col-6">
             <!-- small box -->
-                    <div class="small-box bg-info"  >
-                      <div class="inner">
+                    <div class="small-box bg-info" style="color: #000000" >
+                      <div class="inner"  style="color: #000000">
                       <h3>
                         <?php
                         include('connection.php'); 
@@ -146,16 +146,18 @@ include('connection.php');
                       <div class="icon">
                         <i class="ion-archive"></i>
                       </div>
-                      <a href="arrived.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                      <div class="small-box-footer">
+                      <a href="arrived.php" style="color: #000000" >More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
                     </div>
                   </div>
 
                   
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
+          <div class="col-lg-3 col-6" >
                   <!-- small box -->
-                  <div class="small-box bg-success"  >
-                    <div class="inner">
+                  <div class="small-box bg-success" >
+                    <div class="inner" style="color: #000000">
                       <h3>
                         <?php
                         include('connection.php'); 
@@ -182,14 +184,16 @@ include('connection.php');
                     <div class="icon">
                       <i class="ion-ios-box"></i>
                     </div>
-                    <a href="collected.php" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <div class="small-box-footer">
+                    <a href="collected.php"  style="color: #000000" >More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
                   </div>
                 </div>
           <!-- ./col -->
           <div class="col-lg-3 col-6">
                 <!-- small box -->
                 <div class="small-box bg-warning" >
-                  <div class="inner">
+                  <div class="inner" >
                   <h3>
                         <?php
                         include('connection.php'); 

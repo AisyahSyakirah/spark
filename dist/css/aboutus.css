@@ -138,6 +138,7 @@
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 80px;
+	
 }
 
 .sidenav a {
@@ -151,7 +152,7 @@
     transition: 0.3s;
     padding-top: 2em;
     background-color:rgb(98, 11, 124);
-	color:#9e7c7c
+	
 }
 
 .sidenav a:hover {
