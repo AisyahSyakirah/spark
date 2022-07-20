@@ -124,7 +124,7 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
                 <div class="card-body">
                   <div class="form-group">
                     <label for="EMPLOYEE_ID">Employee ID</label>
-                    <input type="number" class="form-control" name="EMPLOYEE_ID" id="EMPLOYEE_ID" placeholder="Enter employee ID">
+                    <input type="number" class="form-control" name="EMPLOYEE_ID" id="EMPLOYEE_ID" placeholder="Enter employee ID" maxlength="6" minlength="6">
                   </div>
 
                   <div class="form-group">

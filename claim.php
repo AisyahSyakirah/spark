@@ -187,7 +187,7 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <input type="SUBMIT" class="btn btn-success"  name="update" id="btnnav" value="Update">
+                  <input type="SUBMIT" class="btn btn-success" style="width:100px;position:relative; left:900px" name="update" id="btnnav" value="Update">
                   
                 
                 </div>
