@@ -25,19 +25,30 @@ $permission=$_POST['PERMISSION_ID'];
 
 $register="INSERT INTO EMPLOYEE (EMPLOYEE_ID,EMPLOYEE_ICNO,EMPLOYEE_NAME,PERMISSION_ID) VALUES('$employeeID','$employeeICNO','$employeeName','$permission')" or die("error".mysqli_errno($conn));
 
- if($conn->query($register)== true){?>
 
-           <script type="text/javascript">
-            alert("Succesfully add data");
-            window.location.href = "register_user.php";
-            </script><?php         
-    }else{?>
+if($conn->query($register)== TRUE){?>
 
-       <script type="text/javascript">
-            alert("Oops data already existed");
-            window.location.href = "register_user.php";
-            </script><?php
-    }
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script type="text/javascript">
+          Swal.fire(
+            'Succesfully add member',
+            '',
+            'success'
+          );
+        </script> <?php    
+}else{?>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script type="text/javascript">
+          Swal.fire(
+            'Oops data already existed',
+            '',
+            'error'
+          );<?php echo $tracking_no?>
+      </script><?php
+
+}
     
     $conn->close();
 
