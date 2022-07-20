@@ -25,16 +25,26 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
       
       if($conn->query($insert)== TRUE){?>
   
-             <script type="text/javascript">
-              alert("Succesfully update data");
-              //window.location.href = "claim.php";
-              </script>  <?php    
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script type="text/javascript">
+                Swal.fire(
+                  'Succesfully update data',
+                  '',
+                  'success'
+                );
+              </script> <?php    
       }else{?>
-  
-         <script type="text/javascript">
-              alert("Oops cannot add data <?php echo $tracking_no?>");
-              //window.location.href = "claim.php";
-              </script><?php
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script type="text/javascript">
+                Swal.fire(
+                  'Oops cannot add data',
+                  '',
+                  'error'
+                );<?php echo $tracking_no?>
+            </script><?php
+
       }
       
       $conn->close();
