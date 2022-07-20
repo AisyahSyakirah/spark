@@ -111,7 +111,7 @@ if(isset($_SESSION['EMPLOYEE_ID'])){
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-9">
-            <h1 class="m-0">COLLECTED PARCEL</h1>
+            <h1 class="m-0">PARCEL LIST</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -132,10 +132,10 @@ if(isset($_SESSION['EMPLOYEE_ID'])){
                     <th>RECEIVER NAME</th>
                     <th>RECEIVER PHONE NUMBER</th>
                     <th>RECEIVER CATEGORY</th>
-                    <th>COLLECTED DATE</th>
-                    <th>COLLECTED TIME </th>
+                    <th>ARRIVED DATE</th>
+                    <th>ARRIVED TIME </th>
                     <th>COURIER</th>
-                    <th>PERSON IN CHARGE</th>
+                    <th>PARCEL STATUS</th>
                     <th>PAYMENT</th>
                     </tr>
                     </thead>
@@ -143,7 +143,7 @@ if(isset($_SESSION['EMPLOYEE_ID'])){
                     <?php
                       include('connection.php');
                   
-                      $query="SELECT * FROM PARCEL WHERE STATUS_ID='2003'";
+                      $query="SELECT * FROM PARCEL";
                       $result=mysqli_query($conn, $query);
 
                       
@@ -152,33 +152,32 @@ if(isset($_SESSION['EMPLOYEE_ID'])){
                           $i=1;
                           while ($row=mysqli_fetch_array($result)){
                           
-                          $courier_id=$row['COURIER_ID'];
-                          $status_id=$row['STATUS_ID'];
-                          $payment_id=$row['PAYMENT_ID'];
-                          $receiver_id=$row['RECEIVER_ID'];
-                  
-                                        $query1="SELECT c.COURIER_NAME, ps.STATUS_NAME, py.PAYMENT_PRICE, r.RECEIVER_DETAIL
-                                                FROM COURIER c, PARCEL_STATUS ps, PAYMENT py, RECEIVER_CATEGORY r
-                                                WHERE c.COURIER_ID=$courier_id and ps.STATUS_ID= $status_id and py.PAYMENT_ID=$payment_id and r.RECEIVER_ID= $receiver_id";
-                                        $result1=mysqli_query($conn, $query1);
-                                        $row1=mysqli_fetch_array($result1,MYSQLI_ASSOC);
+                            $courier_id=$row['COURIER_ID'];
+                            $status_id=$row['STATUS_ID'];
+                            $payment_id=$row['PAYMENT_ID'];
+                            $receiver_id=$row['RECEIVER_ID'];
+                    
+                                          $query1="SELECT c.COURIER_NAME, ps.STATUS_NAME, py.PAYMENT_PRICE, r.RECEIVER_DETAIL
+                                                  FROM COURIER c, PARCEL_STATUS ps, PAYMENT py, RECEIVER_CATEGORY r
+                                                  WHERE c.COURIER_ID=$courier_id and ps.STATUS_ID= $status_id and py.PAYMENT_ID=$payment_id and r.RECEIVER_ID= $receiver_id";
+                                          $result1=mysqli_query($conn, $query1);
+                                          $row1=mysqli_fetch_array($result1,MYSQLI_ASSOC);
                               
-                          
-                          
-
-                          ?>
-                           <tr >
-                            <td><?php echo $i;?></td>
-                            <td><?php echo $row['TRACKING_NO'];?></td>
-                            <td><?php echo $row['RECEIVER_NAME'];?></td>
-                            <td><?php echo $row['RECEIVER_PHONO'];?></td>
-                            <td><?php echo $row1['RECEIVER_DETAIL'];?></td>
-                            <td><?php echo $row['COLLECT_DATE'];?></td>
-                            <td><?php echo $row['COLLECT_TIME'];?></td>
-                            <td><?php echo $row1['COURIER_NAME'];?></td>
-                            <td><?php echo $row['PIC_ARRIVED'];?></td>
-                            <td>RM <?php echo $row1['PAYMENT_PRICE'];?></td>
                             
+  
+                            ?>
+                             <tr>
+                              <td><?php echo $i;?></td>
+                              <td><?php echo $row['TRACKING_NO'];?></td>
+                              <td><?php echo $row['RECEIVER_NAME'];?></td>
+                              <td><?php echo $row['RECEIVER_PHONO'];?></td>
+                              <td><?php echo $row1['RECEIVER_DETAIL'];?></td>
+                              <td><?php echo $row['ARRIVED_DATE'];?></td>
+                              <td><?php echo $row['ARRIVED_TIME'];?></td>
+                              <td><?php echo $row1['COURIER_NAME'];?></td>
+                              <td><?php echo $row1['STATUS_NAME'];?></td>
+                              <td>RM <?php echo $row1['PAYMENT_PRICE'];?></td>
+                              
                       </tr>
                             
                           <?php

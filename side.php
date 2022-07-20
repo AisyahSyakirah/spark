@@ -15,6 +15,14 @@ echo '<nav class="mt-2">
     </a>
 
     <ul class="nav nav-treeview">
+    
+        <li class="nav-item">
+        <a href="parcel.php" class="nav-link">
+          <i class="far fa-circle nav-icon"></i>
+          <p>Parcel List</p>
+        </a>
+      </li>
+
       <li class="nav-item">
         <a href="register.php" class="nav-link">
           <i class="far fa-circle nav-icon"></i>
@@ -105,8 +113,16 @@ else
           <i class="fas fa-angle-left right"></i>
           </p>
         </a>
+        
 
         <ul class="nav nav-treeview">
+        
+          <li class="nav-item">
+          <a href="parcel.php" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Parcel List</p>
+          </a>
+        </li>
           <li class="nav-item">
             <a href="register.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>

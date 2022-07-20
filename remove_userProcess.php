@@ -26,7 +26,7 @@
 	}else{?>
 		<script type="text/javascript">
 			alert("Oops something error");
-			window.location.href = "update_user.php";
+			window.location.href = "remove_user.php";
 			</script><?php
 	}
 	$conn->close();

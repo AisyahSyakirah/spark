@@ -1,10 +1,10 @@
-<!DOCTYPE html>
 <?php
 session_start();
-require('connection.php');
-if(!isset($_SESSION['EMPLOYEE_ID'])){
-	header('location:index.php');
-	}
+include ('connection.php');
+
+if (!isset($_SESSION['logged-in']) || $_SESSION['logged-in'] == false) {
+  header("Location: index.php");
+}
 ?>
 <html lang="en">
 <head>
