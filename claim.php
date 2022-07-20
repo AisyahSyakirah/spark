@@ -19,8 +19,6 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
       $collect_time = ($_POST['COLLECT_TIME']);
       $pic_collect = ($_POST['PIC_COLLECT']);
 
-      echo $tracking_no;
-    
       $insert = "UPDATE PARCEL set COLLECT_DATE = '$collect_date', COLLECT_TIME = '$collect_time', PIC_COLLECT = '$pic_collect', STATUS_ID = '2003' WHERE TRACKING_NO= '$tracking_no'";
       
       if($conn->query($insert)== TRUE){?>
