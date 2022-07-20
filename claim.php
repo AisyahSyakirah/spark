@@ -21,14 +21,14 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
 
       echo $tracking_no;
     
-      $insert = "UPDATE PARCEL set COLLECT_DATE = '$collect_date', COLLECT_TIME = '$collect_time', PIC_COLLECT = '$pic_collect' WHERE TRACKING_NO= '$tracking_no'";
+      $insert = "UPDATE PARCEL set COLLECT_DATE = '$collect_date', COLLECT_TIME = '$collect_time', PIC_COLLECT = '$pic_collect', STATUS_ID = '2003' WHERE TRACKING_NO= '$tracking_no'";
       
       if($conn->query($insert)== TRUE){?>
   
              <script type="text/javascript">
               alert("Succesfully update data");
               //window.location.href = "claim.php";
-              </script>  <?php         
+              </script>  <?php    
       }else{?>
   
          <script type="text/javascript">

@@ -2,7 +2,7 @@
 <?php
 include 'connection.php';
 session_start();
-if(isset($SESSION['EMPLOYEE_ID'])){
+if(isset($_SESSION['EMPLOYEE_ID'])){
 	header('localhost:home_manager.php');
 	}
 

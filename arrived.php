@@ -2,7 +2,7 @@
 <?php
 include 'connection.php';
 session_start();
-if(isset($SESSION['TRACKING_NO'])){
+if(isset($_SESSION['TRACKING_NO'])){
 	header('localhost:homepage.php');
 	}
 

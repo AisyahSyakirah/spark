@@ -133,6 +133,9 @@ include('connection.php');
                             if($row){
                               printf($row);
                             }
+                            else{
+                              echo"0";
+                            }
                             mysqli_free_result($result);
                           }
                       } mysqli_close($conn);?>
@@ -165,6 +168,9 @@ include('connection.php');
                             if($row){
                               printf($row);
                             }
+                            else{
+                              echo "0";
+                            }
                             mysqli_free_result($result);
                           }
                       } mysqli_close($conn);?>
@@ -195,6 +201,9 @@ include('connection.php');
                             $row = mysqli_num_rows($result);
                             if($row){
                               printf($row);
+                            }
+                            else{
+                              echo "0";
                             }
                             mysqli_free_result($result);
                           }
