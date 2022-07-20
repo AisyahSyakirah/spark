@@ -84,7 +84,7 @@ if(isset($_SESSION['EMPLOYEE_ID'])){
           <img src="dist/img/user.ico" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block"><?php if(($_SESSION['EMPLOYEE_ID']) == 14352) 
+          <a href="#" class="d-block"><?php if(($_SESSION['EMPLOYEE_ID']) == 2020877832) 
                                             {
                                               echo "HELLO MANAGER!"; 
                                             }
@@ -124,13 +124,14 @@ if(isset($_SESSION['EMPLOYEE_ID'])){
                 <!-- /.card-header -->
               <div class="card">
                 <div class="card-body">
-                  <table id="example1" class="table table-bordered table-striped" style="font-size: 15px;">
+                  <table id="example1" class="table table-bordered table-striped" style="font-size: 13px; margin-left:-10px;">
                     <thead>
                     <tr>
                     <th>NO.</th>
                     <th>TRACKING NO</th>
                     <th>RECEIVER NAME</th>
                     <th>RECEIVER PHONE NUMBER</th>
+                    <th>RECEIVER CATEGORY</th>
                     <th>COLLECTED DATE</th>
                     <th>COLLECTED TIME </th>
                     <th>COURIER</th>
@@ -151,30 +152,27 @@ if(isset($_SESSION['EMPLOYEE_ID'])){
                           $i=1;
                           while ($row=mysqli_fetch_array($result)){
                           
-                            $courier_id=$row['COURIER_ID'];
-                            $status_id=$row['STATUS_ID'];
-                            $payment_id=$row['PAYMENT_ID'];
-
+                          $courier_id=$row['COURIER_ID'];
+                          $status_id=$row['STATUS_ID'];
+                          $payment_id=$row['PAYMENT_ID'];
+                          $receiver_id=$row['RECEIVER_ID'];
                   
-                                        $query1="SELECT c.COURIER_NAME, ps.STATUS_NAME, py.PAYMENT_PRICE 
-                                                FROM COURIER c, PARCEL_STATUS ps, PAYMENT py
-                                                WHERE c.COURIER_ID=$courier_id and ps.STATUS_ID= $status_id and py.PAYMENT_ID=$payment_id";
+                                        $query1="SELECT c.COURIER_NAME, ps.STATUS_NAME, py.PAYMENT_PRICE, r.RECEIVER_DETAIL
+                                                FROM COURIER c, PARCEL_STATUS ps, PAYMENT py, RECEIVER_CATEGORY r
+                                                WHERE c.COURIER_ID=$courier_id and ps.STATUS_ID= $status_id and py.PAYMENT_ID=$payment_id and r.RECEIVER_ID= $receiver_id";
                                         $result1=mysqli_query($conn, $query1);
                                         $row1=mysqli_fetch_array($result1,MYSQLI_ASSOC);
                               
-                          /*$query1="SELECT p.TRACKING_NO, p.RECEIVER_NAME, p.RECEIVER_PHONO, p.COLLECT_DATE, p.COLLECT_TIME, p.PIC_ARRIVED,c.COURIER_NAME, ps.STATUS_NAME, py.PAYMENT_PRICE 
-                                  FROM COURIER c, PARCEL_STATUS ps, PAYMENT py, PARCEL p 
-                                  WHERE c.COURIER_ID=p.COURIER_ID and ps.STATUS_ID=p.STATUS_ID and py.PAYMENT_ID=p.PAYMENT_ID";
-                          $result1=mysqli_query($conn, $query1);
-                          $row1=mysqli_fetch_array($result1,MYSQLI_ASSOC);*/
+                          
                           
 
                           ?>
-                           <tr>
+                           <tr >
                             <td><?php echo $i;?></td>
                             <td><?php echo $row['TRACKING_NO'];?></td>
                             <td><?php echo $row['RECEIVER_NAME'];?></td>
                             <td><?php echo $row['RECEIVER_PHONO'];?></td>
+                            <td><?php echo $row1['RECEIVER_DETAIL'];?></td>
                             <td><?php echo $row['COLLECT_DATE'];?></td>
                             <td><?php echo $row['COLLECT_TIME'];?></td>
                             <td><?php echo $row1['COURIER_NAME'];?></td>

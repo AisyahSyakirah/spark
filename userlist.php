@@ -85,7 +85,7 @@ if(isset($_POST['EMPLOYEE_ID'])){
           <img src="dist/img/user.ico" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block"><?php if(($_SESSION['EMPLOYEE_ID']) == 14352) 
+          <a href="#" class="d-block"><?php if(($_SESSION['EMPLOYEE_ID']) == 2020877832) 
                                             {
                                               echo "HELLO MANAGER!"; 
                                             }
@@ -139,7 +139,7 @@ if(isset($_POST['EMPLOYEE_ID'])){
                     <?php
                       require('connection.php');
           
-                      $query="SELECT * FROM employee WHERE EMPLOYEE_ID != '14352' ";
+                      $query="SELECT * FROM employee WHERE EMPLOYEE_ID != '2020877832' ";
                       $result=mysqli_query($conn, $query);
 
                       $i=1;
