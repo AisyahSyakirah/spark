@@ -124,12 +124,12 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
                 <div class="card-body">
                   <div class="form-group">
                     <label for="EMPLOYEE_ID">Employee ID</label>
-                    <input type="number" class="form-control" name="EMPLOYEE_ID" id="EMPLOYEE_ID" placeholder="Enter employee ID" maxlength="6" minlength="6">
+                    <input type="text" class="form-control" name="EMPLOYEE_ID" id="EMPLOYEE_ID" placeholder="eg: 2020812345" onkeypress="return onlyNumberKey(event)" maxlength="10">
                   </div>
 
                   <div class="form-group">
-                    <label for="EMPLOYEE_ICNO">Employee IC</label>
-                    <input type="number" class="form-control" name="EMPLOYEE_ICNO" id="EMPLOYEE_ICNO" placeholder="Enter employee IC">
+                    <label for="EMPLOYEE_ICNO">Employee IC (without -)</label>
+                    <input type="text" class="form-control" name="EMPLOYEE_ICNO" id="EMPLOYEE_ICNO" placeholder="eg: 020610042843" onkeypress="return onlyNumberKey(event)" maxlength="12">
                   </div>
 
                   <div class="form-group">
@@ -214,5 +214,15 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
+<script>
+    function onlyNumberKey(evt) {
+          
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
+</script>
 </body>
 </html>

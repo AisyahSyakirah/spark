@@ -69,7 +69,7 @@ else
         <a href="#" class="nav-link">
           <i class="nav-icon fas fa-user"></i>
           <p>
-            User Utilities
+            SPARK Member Utilities
           <i class="fas fa-angle-left right"></i>
           </p>
         </a>
@@ -78,21 +78,21 @@ else
           <li class="nav-item">
             <a href="register_user.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Add New User</p>
+              <p>Add New Member</p>
             </a>
           </li>
 
           <li class="nav-item">
             <a href="remove_user.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>Remove User Access</p>
+              <p>Remove Member Access</p>
             </a>
           </li>
 
           <li class="nav-item">
             <a href="userlist.php" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
-              <p>User List</p>
+              <p>Member List</p>
             </a>
           </li>
         </ul>    

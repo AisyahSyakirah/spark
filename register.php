@@ -121,7 +121,7 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
                   </div>
                   <div class="form-group">
                     <label for="RECEIVER_PHONO">Receiver Phone Number</label>
-                    <input type="number" class="form-control" name="RECEIVER_PHONO" placeholder="Enter receiver phone number">
+                    <input type="text" class="form-control" name="RECEIVER_PHONO" placeholder="Enter receiver phone number" onkeypress="return onlyNumberKey(event)" maxlength="11">
                   </div>
                   <div class="form-group">
                     <label for="ARRIVED_DATE">Arrived Date</label>
@@ -158,7 +158,7 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
                   </div>
 
                   <div class="form-group">
-                  <label for="COURIER_ID"><b>Parcel Status</b></label>
+                  <label for="COURIER_ID"><b>Parcel Courier</b></label>
 	                <br>
 	                <select name="COURIER_ID" class="form-control">
                   <option>PLEASE SELECT</option>
@@ -223,6 +223,16 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
 <script src="dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<!-- Page specific script -->
+<script>
+    function onlyNumberKey(evt) {
+          
+        // Only ASCII character in that range allowed
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    }
+</script>
+
 </body>
 </html>
