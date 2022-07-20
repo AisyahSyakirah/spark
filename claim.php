@@ -19,36 +19,27 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
       $collect_time = ($_POST['COLLECT_TIME']);
       $pic_collect = ($_POST['PIC_COLLECT']);
 
-      echo $tracking_no;
     
-      $insert = "UPDATE PARCEL set COLLECT_DATE = '$collect_date', COLLECT_TIME = '$collect_time', PIC_COLLECT = '$pic_collect', STATUS_ID = '2003' WHERE TRACKING_NO= '$tracking_no'";
-      
+      $insert = "UPDATE PARCEL set COLLECT_DATE = '$collect_date', COLLECT_TIME = '$collect_time', PIC_COLLECT = '$pic_collect', STATUS_ID = 2003 WHERE TRACKING_NO= '$tracking_no'";
+     
       if($conn->query($insert)== TRUE){?>
   
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-            <script type="text/javascript">
-                Swal.fire(
-                  'Succesfully update status',
-                  '',
-                  'success'
-                );
-              </script> <?php    
-      }else{?>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-            <script type="text/javascript">
-                Swal.fire(
-                  'Oops cannot update status',
-                  '',
-                  'error'
-                );<?php echo $tracking_no?>
-            </script><?php
-
+        <script type="text/javascript">
+            alert("Succesfully add data");
+            window.location.href = "claim.php";
+            </script><?php         
       }
+      else{?>
+
+       <script type="text/javascript">
+            alert("Oops data already existed");
+            window.location.href = "claim.php";
+            </script><?php
+    }
+    }
       
       $conn->close();
-  }
+  
 
 ?>
 <html lang="en">

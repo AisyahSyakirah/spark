@@ -176,7 +176,7 @@ if(isset($_SESSION['EMPLOYEE_ID'])){
                             <td><?php echo $row['COLLECT_DATE'];?></td>
                             <td><?php echo $row['COLLECT_TIME'];?></td>
                             <td><?php echo $row1['COURIER_NAME'];?></td>
-                            <td><?php echo $row['PIC_ARRIVED'];?></td>
+                            <td><?php echo $row['PIC_COLLECT'];?></td>
                             <td>RM <?php echo $row1['PAYMENT_PRICE'];?></td>
                             
                       </tr>
