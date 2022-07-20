@@ -29,7 +29,7 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             <script type="text/javascript">
                 Swal.fire(
-                  'Succesfully update data',
+                  'Succesfully update status',
                   '',
                   'success'
                 );
@@ -39,7 +39,7 @@ if(!isset($_SESSION['EMPLOYEE_ID'])){
             <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             <script type="text/javascript">
                 Swal.fire(
-                  'Oops cannot add data',
+                  'Oops cannot update status',
                   '',
                   'error'
                 );<?php echo $tracking_no?>
