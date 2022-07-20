@@ -171,18 +171,12 @@ if(!empty($_POST['trackingNo']))
             'TRACKING NUMBER !',
             'error'
             );
+        
         </script><?php
         }
     
         mysqli_close($conn);
-}
-?>
-
-
-
-
-
-
+}?>
 
 </div></table></div></div></div></div>
 
